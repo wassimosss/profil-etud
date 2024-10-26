@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Profil Étudiant</title>
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            
+            var nom = document.getElementById("nom").value;
+            var email = document.getElementById("email").value;
+            var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            var errorMessage = "";
+
+            if (nom === "") {
+                errorMessage += "Le champ de nom ne doit pas être vide.\n";
+            }
+            
+            if (!emailPattern.test(email)) {
+                errorMessage += "Veuillez entrer un email valide.\n";
+            }
+
+            if (errorMessage) {
+                alert(errorMessage);
+                return false;
+            } else {
+                alert("Formulaire soumis avec succès!");
+                document.getElementById("contactForm").submit();
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>NAKACH WASSIM</h1>
+    <section>
+        <h2>À propos :</h2>
+        <p>Je m'appelle Wassim Nakach, j'ai 21 ans, et je suis étudiant en 3ème année à l'EMSI (École Marocaine de Science d'Ingénieur).</p>
+    </section>
+    <section>
+        <h2>Hobbies et objectifs :</h2>
+        <ul>
+            <li>Jouer aux jeux vidéo</li>
+            <li>Lire des articles</li>
+            <li>Faire du sport</li>
+        </ul>
+        <ol>
+            <li>Maîtriser la programmation orientée objet</li>
+            <li>Maîtriser les langages PHP, C++, et Python</li>
+            <li>Être capable de réaliser une application avec la création de sa base de données</li>
+            <li>Être capable de créer une page web sans difficulté</li>
+        </ol>
+    </section>
+    <section>
+        <table border="2" width="35%">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Âge</th>
+                    <th>Ville</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Faida</td>
+                    <td>Ismael</td>
+                    <td>Casablanca</td>
+                </tr>
+                <tr>
+                    <td>Khedar</td>
+                    <td>Aymen</td>
+                    <td>Casablanca</td>
+                </tr>
+                <tr>
+                    <td>Fatih</td>
+                    <td>Ahmed</td>
+                    <td>Casablanca</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+  
+    <form action="">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" required>
+        <br><br>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+        <label for="message">Message :</label>
+        <br>
+        <textarea id="message" name="message" rows="5" cols="40"></textarea>
+        <br><br>
+        <button type="submit">Envoyer le formulaire</button>
+    </form>
+    
+</body>
+</html>
+
