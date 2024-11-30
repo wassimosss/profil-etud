@@ -179,7 +179,7 @@ if(isset($_POST["valider"]))
     }
     else
     {
-      echo "Bienvenue, administrateur !";
+      echo "Bienvenue, client!";
     }
 }
 else
